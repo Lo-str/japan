@@ -1,1 +1,20 @@
- 
+@use "./mixins" as m;
+@use "./vars" as v;
+
+// Header Container
+.header {
+  border: 2px solid white;
+  width: 100%;
+  height: fit-content;
+  display:flex;
+  justify-content: space-between;
+  &__logo {
+    border: 2px solid white;
+    width: v.$rem-16;
+    height: v.$rem-11;
+    font-family: v.$ff-logo;
+    font-size: v.$rem-9 ;
+    font-weight: v.$fw-logo1;
+    }
+}
+

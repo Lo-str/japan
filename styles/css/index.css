@@ -1,0 +1,41 @@
+.header {
+  border: 2px solid white;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  border: 2px solid white;
+  width: 5.6rem;
+  height: 2.25rem;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.wrap {
+  border: 2px solid white;
+  max-width: 90rem;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1.12rem;
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: auto 1fr auto;
+  grid-template-areas: "header" "" "main";
+  justify-content: center;
+}
+
+/*# sourceMappingURL=index.css.map */

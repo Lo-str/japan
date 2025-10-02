@@ -1,0 +1,11 @@
+@use "./mixins" as m;
+@use "./vars" as v;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  color: v.$fc;
+  background-color: v.$bg-c;
+}
