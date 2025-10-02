@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head. Japan</title>
+
+    <!-- Normalize and stylesheet links -->
+    <link rel="stylesheet" href="styles/css/index.css">
+    <link rel="stylesheet" href="styles/css/normalize.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header Container-->
+        <header class="header">
+            <!-- Logo -->
+            <div class="header__logo">
+                <p class="header__txt">Head.</p>
+            </div>
+            <!-- Navigation Bar -->
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li><a class="header__link">Works</a></li>
+                    <li><a class="header__link">Services</a></li>
+                    <li><a class="header__link">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Container -->
+        <main class="main">
+            <h1 class="main__title">Japan</h1>
+            <p class="main__txt">
+                Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.<br>
+                Donec viverra eleifend lacus, vitae ullamcor.
+            </p>
+            <picture class="main__img">
+                <source class="mtn3" media="(max-width: 320px)" scrset="images/mountain1.svg">
+                <source class="mtn2" media="(max-width: 768px)" scrset="images/mountain2.svg">
+                <source class="mtn1" media="(min-width: 769px)" scrset="images/mountain3.svg">
+                <img src="images/mountain3.svg" alt="Black & white landscape picture of a summit">
+            </picture>
+        </main>
+    </div>
+</body>
+</html>

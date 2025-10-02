@@ -1,0 +1,18 @@
+// === Images ===
+@mixin img1 {
+  max-width: 864px;
+  width: 100%;
+  min-height: 328px ;
+}
+
+@mixin img2 {
+  max-width: 617px;
+    width: 100%;
+    min-height: 512px;
+}
+
+@mixin img3 {
+  max-width: 256px;
+  width: 100%;
+  min-height: 284 px;
+}
