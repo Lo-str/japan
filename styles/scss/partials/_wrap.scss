@@ -3,11 +3,11 @@
 
 .wrap{
   border: 2px solid white;
-  max-width: 90rem;
+  max-width: v.$vp-wide;
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: v.$rem-7;
+  padding: v.$rem-2;
   padding-bottom: 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -19,3 +19,6 @@
   justify-content: center;
   // @include m.wrap;
 }
+
+.header { grid-area: header;}
+.main { grid-area: main;}

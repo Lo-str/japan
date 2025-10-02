@@ -10,11 +10,23 @@
   justify-content: space-between;
   &__logo {
     border: 2px solid white;
-    width: v.$rem-16;
-    height: v.$rem-11;
+    width: v.$rem-9 * 10;
+    height: v.$rem-32 + v.$rem-4;
     font-family: v.$ff-logo;
     font-size: v.$rem-9 ;
     font-weight: v.$fw-logo1;
-    }
+    padding: calc(v.$rem-5 / 2);
+    } 
+  .header__list {
+    border: 2px solid white;
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 2rem;
+    padding: calc(v.$rem-5 / 2);
+  }
+    
 }
+
+
 
