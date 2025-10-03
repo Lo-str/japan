@@ -3,9 +3,9 @@
 
 .wrap{
   border: 2px solid white;
-  max-width: v.$vp-wide;
-  width: 100%;
-  min-height: 100vh;
+  width: min(90%, v.$vp-wide);
+  height: 100dvh;
+  height: 100vh;
   margin: 0 auto;
   padding: v.$rem-2;
   padding-bottom: 0;
@@ -14,10 +14,8 @@
   grid-row: auto 1fr auto;
   grid-template-areas:
   "header"
-  ""
   "main";
   justify-content: center;
-  // @include m.wrap;
 }
 
 .header { grid-area: header;}

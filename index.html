@@ -6,8 +6,8 @@
     <title>Head. Japan</title>
 
     <!-- Normalize and stylesheet links -->
-    <link rel="stylesheet" href="styles/css/index.css">
     <link rel="stylesheet" href="styles/css/normalize.css">
+    <link rel="stylesheet" href="styles/css/index.css">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,23 @@
     <div class="wrap">
         <!-- Header Container-->
         <header class="header">
-            <!-- Logo -->
-            <p class="header__logo">Head.</p>
-
+            
+            
             <!-- Navigation Bar -->
             <nav class="header__nav">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a class="header__logo-txt">Head.</a>
+                </div>
+                <div class="header__burger">
+                    <div class="header__burger-line"></div>
+                    <div class="header__burger-line"></div>
+                    <div class="header__burger-line"></div>
+                </div>
                 <ul class="header__list">
-                    <li><a class="header__link">Works</a></li>
-                    <li><a class="header__link">Services</a></li>
-                    <li><a class="header__link">Contacts</a></li>
+                    <li class="header__link"><a>Works</a></li>
+                    <li class="header__link"><a>Services</a></li>
+                    <li class="header__link"><a>Contacts</a></li>
                 </ul>
             </nav>
         </header>
@@ -37,12 +45,12 @@
                 Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.<br>
                 Donec viverra eleifend lacus, vitae ullamcor.
             </p>
-            <!-- <picture class="main__img">
-                <source class="mtn3" media="(max-width: 320px)" scrset="images/mountain1.svg">
-                <source class="mtn2" media="(max-width: 768px)" scrset="images/mountain2.svg">
-                <source class="mtn1" media="(min-width: 769px)" scrset="images/mountain3.svg"> -->
-            <img class="main__img" src="images/mountain3.svg" alt="Black & white landscape picture of a summit">
-            <!-- </picture> -->
+            <picture class="main__img">
+                <source class="mtn3" media="(max-width: 320px)" srcset="images/mountain3.svg">
+                <source class="mtn2" media="(max-width: 768px)" srcset="images/mountain2.svg">
+                <source class="mtn1" media="(min-width: 769px)" srcset="images/mountain1.svg">
+                <img class="main__pic" src="images/mountain1.svg" alt="Black & white landscape picture of a summit">
+            </picture>
         </main>
     </div>
 </body>

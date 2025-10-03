@@ -1,32 +1,71 @@
 @use "./mixins" as m;
 @use "./vars" as v;
 
-// Header Container
-.header {
+// Header Block
+.header {  
   border: 2px solid white;
   width: 100%;
   height: fit-content;
-  display:flex;
-  justify-content: space-between;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: min(v.$rem-5, 8%);
+  }
+
   &__logo {
     border: 2px solid white;
-    width: v.$rem-9 * 10;
-    height: v.$rem-32 + v.$rem-4;
-    font-family: v.$ff-logo;
-    font-size: v.$rem-9 ;
-    font-weight: v.$fw-logo1;
-    padding: calc(v.$rem-5 / 2);
-    } 
-  .header__list {
+    width: v.$rem-64;
+    height: v.$rem-32;
+    cursor: pointer;
+    @include m.transition;
+    @include m.hover;
+
+    &-txt {
+      font-family: v.$ff-logo;
+      font-size: v.$rem-24;
+      font-weight: v.$fw-logo1;
+    }
+  }
+
+  &__list {
     border: 2px solid white;
     display: flex;
     list-style: none;
     text-decoration: none;
-    gap: 2rem;
-    padding: calc(v.$rem-5 / 2);
+    gap: v.$rem-30;
   }
-    
+
+  &__link {
+    font-family: v.$ff-nav;
+    cursor: pointer;
+    @include m.transition;
+    @include m.hover;
+  }
+
+  &__burger {
+    display: none;
+
+    &-line {
+      width: v.$rem-48;
+      height: v.$rem-4;
+      background-color: v.$fc;
+    }
+  }
+
+  @media (max-width: v.$vp-small) {
+    &__list {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+      flex-direction: column;
+      gap: v.$rem-10;
+      cursor: pointer;
+      @include m.transition;
+      @include m.hover;
+    }
+  }
 }
-
-
-

@@ -1,13 +1,13 @@
 @use "./mixins" as m;
 @use "./vars" as v;
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after {box-sizing: border-box;}
 
 html {font-size: 62.5%;}
 
 body {
+  font-size: v.$rem-16;
   color: v.$fc;
   background-color: v.$bg-c;
+  padding: min(90%, v.$rem-20);
 }

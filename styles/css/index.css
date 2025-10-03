@@ -1,62 +1,19 @@
-.header {
-  border: 2px solid white;
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-between;
-}
-.header__logo {
-  border: 2px solid white;
-  width: 9rem;
-  height: 3.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  padding: 0.25rem;
-}
-.header .header__list {
-  border: 2px solid white;
-  display: flex;
-  list-style: none;
-  text-decoration: none;
-  gap: 2rem;
-  padding: 0.25rem;
-}
+/* Error: There is no module with the namespace "m".
+ *    ,
+ * 15 |   max-width: m.$pw-img1;
+ *    |              ^^^^^^^^^^
+ *    '
+ *   styles\scss\partials\_mixins.scss 15:14  img1()
+ *   styles\scss\partials\_main.scss 27:13    @use
+ *   styles\scss\index.scss 6:1               root stylesheet */
 
-*, *::before, *::after {
-  box-sizing: border-box;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "m".\a    \2577 \a 15 \2502    max-width: m.$pw-img1;\d\a    \2502               ^^^^^^^^^^\a    \2575 \a   styles\\scss\\partials\\_mixins.scss 15:14  img1()\a   styles\\scss\\partials\\_main.scss 27:13    @use\a   styles\\scss\\index.scss 6:1               root stylesheet';
 }
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  color: #FFFFFF;
-  background-color: #000000;
-}
-
-.wrap {
-  border: 2px solid white;
-  max-width: 144rem;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0.2rem;
-  padding-bottom: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row: auto 1fr auto;
-  grid-template-areas: "header" "" "main";
-  justify-content: center;
-}
-
-.header {
-  grid-area: header;
-}
-
-.main {
-  grid-area: main;
-}
-
-/*# sourceMappingURL=index.css.map */

@@ -1,26 +1,24 @@
+@use "./vars" as v;
+
+// Hover effect
+@mixin transition {
+transition: transform .2s;
+}
+
+@mixin hover {
+  &:hover {
+  transform: scale(1.1);
+  }
+}
+
+
 // === Images ===
+
 @mixin img1 {
-  max-width: 864px;
+  max-width: v.$pw-img1;
   width: 100%;
-  min-height: 328px ;
+  height: auto;
 }
+@mixin img2 { max-width: v.$pw-img2; width: 100%; height: auto; }
+@mixin img3 { max-width: v.$pw-img3; width: 100%; height: auto; }
 
-@mixin img2 {
-  max-width: 617px;
-    width: 100%;
-    min-height: 512px;
-}
-
-@mixin img3 {
-  max-width: 256px;
-  width: 100%;
-  min-height: 284 px;
-}
-
-// Flexcontainer
-// @mixin wrap {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   gap: 20%;
-// }

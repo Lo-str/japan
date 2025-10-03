@@ -1,12 +1,14 @@
-// === Desktop screen ===
+@use "./mixins" as m;
 
 // Font Family
 $ff-logo: "Baloo 2", sans-serif;
-$ff-nav:"Source Code Pro", monospace;
+$ff-nav: "Source Sans 3", sans-serif;
 $ff-title: "Poppins", sans-serif;
 $ff-txt: "Source Sans 3", sans-serif;
 
 // Rem
+$rem--08: 0.08rem;
+$rem--2: -0.2rem;
 $rem-1: 0.1rem;
 $rem-2: 0.2rem;
 $rem-3: 0.3rem;
@@ -19,17 +21,27 @@ $rem-9: 0.9rem;
 $rem-10: 1rem;
 $rem-16: 1.6rem;
 $rem-20: 2rem;
+$rem-30: 3rem;
+$rem-22: 2.2rem;
 $rem-24: 2.4rem;
 $rem-32: 3.2rem;
 $rem-48: 4.8rem;
 $rem-64: 6.4rem;
+$rem-102: 10.2rem;
 $vp-wide: 144rem;
+$vp-mid: 76.8rem;
+$vp-small: 55rem;
+
+// Pics
+$pw-img1: 86.4rem;
+$pw-img2: 61.7rem;
+$pw-img3: 25.6rem;
 
 
 // Font Weight
 $fw-logo1: 800;
-$fw-logo1: 400;
-$fw-title1: 500;
+$fw-logo2: 400;
+$fw-title: 500;
 
 // Color
 $fc: #FFFFFF;
