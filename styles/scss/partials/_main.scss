@@ -3,15 +3,18 @@
 
 .main {
   border: 2px solid white;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
   gap: clamp(v.$rem-24, calc(5vw + v.$rem-1), v.$rem-48);
 
   &__title {
     font-family: v.$ff-title;
     font-size: clamp(v.$rem-20 + v.$rem-16, calc(6vw + v.$rem-16), v.$rem-64 + v.$rem-20);
-    letter-spacing: clamp(v.$rem--08, calc(6vw + v.$rem-16), v.$rem--2);
+    letter-spacing: clamp(v.$rem_08, calc(6vw + v.$rem-16), v.$rem_2);
     line-height: clamp(v.$rem-30 + v.$rem-10, calc(6vw + v.$rem-16), v.$rem-102 );
     font-weight: v.$fw-title;  }
 
@@ -19,15 +22,21 @@
     font-family: v.$ff-txt;
     font-size: clamp(v.$rem-10 + v.$rem-2, calc(2vw + v.$rem-16), v.$rem-20 + v.$rem-2);
     line-height: clamp(v.$rem-32, calc(2vw + v.$rem-16), v.$rem-10 + v.$rem-8);
-    width: clamp(45ch, 50%, 75ch);
+    // width: clamp(45ch, 50%, 75ch);
     text-align: center;
   }
 
-  &__img {
-    @include m.img1; }
-  &__img {
-    @include m.img2; }
-  &__img {
-    @include m.img3; }
+  &__pic {
+    width: 100%;
+    &__mtn1 {
+      @include m.img1; 
+    }
+    &__mtn2 {
+      @include m.img2; 
+    }
+    &__mtn3 {
+      @include m.img3; 
+    }
   }
+}
 

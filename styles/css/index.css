@@ -1,19 +1,192 @@
-/* Error: There is no module with the namespace "m".
- *    ,
- * 15 |   max-width: m.$pw-img1;
- *    |              ^^^^^^^^^^
- *    '
- *   styles\scss\partials\_mixins.scss 15:14  img1()
- *   styles\scss\partials\_main.scss 27:13    @use
- *   styles\scss\index.scss 6:1               root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: There is no module with the namespace "m".\a    \2577 \a 15 \2502    max-width: m.$pw-img1;\d\a    \2502               ^^^^^^^^^^\a    \2575 \a   styles\\scss\\partials\\_mixins.scss 15:14  img1()\a   styles\\scss\\partials\\_main.scss 27:13    @use\a   styles\\scss\\index.scss 6:1               root stylesheet';
+.header {
+  border: 2px solid white;
+  width: 100%;
+  height: fit-content;
+  position: relative;
 }
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: min(0.5rem, 8%);
+}
+.header__logo {
+  border: 2px solid white;
+  width: 6.4rem;
+  height: 3.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.header__logo:hover {
+  transform: scale(1.1);
+}
+.header__logo-txt {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.header__list {
+  border: 2px solid white;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  gap: 3rem;
+}
+.header__link {
+  font-family: "Source Sans 3", sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.header__link:hover {
+  transform: scale(1.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  background-color: #000000;
+  padding: min(90%, 2rem);
+  padding-bottom: 0;
+}
+
+.wrap {
+  border: 2px solid white;
+  width: min(90%, 90rem);
+  height: 100dvh;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0.2rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.main {
+  border: 2px solid white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(2.4rem, 5vw + 0.1rem, 4.8rem);
+}
+.main__title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(3.6rem, 6vw + 1.6rem, 8.4rem);
+  letter-spacing: clamp(0.08rem, 6vw + 1.6rem, 0.2rem);
+  line-height: clamp(4rem, 6vw + 1.6rem, 10.2rem);
+  font-weight: 500;
+}
+.main__txt {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: clamp(1.2rem, 2vw + 1.6rem, 2.2rem);
+  line-height: clamp(3.2rem, 2vw + 1.6rem, 1.8rem);
+  text-align: center;
+}
+.main__pic {
+  width: 100%;
+}
+.main__pic__mtn1 {
+  max-width: 86.4rem;
+  width: 100%;
+  height: auto;
+}
+.main__pic__mtn2 {
+  max-width: 61.7rem;
+  width: 100%;
+  height: auto;
+}
+.main__pic__mtn3 {
+  max-width: 25.6rem;
+  width: 100%;
+  height: auto;
+}
+
+.burger {
+  position: relative;
+}
+.burger__drop {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+}
+.burger__line {
+  width: 4.8rem;
+  height: 0.4rem;
+  background-color: #FFFFFF;
+}
+.burger__list {
+  border: 2px solid white;
+  position: fixed;
+  display: none;
+  width: min(30%, 10.2rem);
+  height: auto;
+  background-color: #111111;
+  padding: 1rem;
+  z-index: 1000;
+  list-style: none;
+}
+.burger__link .link {
+  display: block;
+  font-family: "Source Sans 3", sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.burger__link .link:hover {
+  transform: scale(1.1);
+}
+.burger__link .link {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+.burger__link .link:hover:hover {
+  transform: scale(1.1);
+}
+.burger__drop:checked ~ .burger__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.5vmin, 28px);
+}
+
+@media (max-width: 55rem) {
+  .header__list {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.2s;
+  }
+  .burger:hover {
+    transform: scale(1.1);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

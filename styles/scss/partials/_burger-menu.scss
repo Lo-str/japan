@@ -1,0 +1,70 @@
+@use "./mixins" as m;
+@use "./vars" as v;
+
+.burger {
+  position: relative;
+  
+  &__drop {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+  }
+
+  &__line {
+    width: v.$rem-48;
+    height: v.$rem-4;
+    background-color: v.$fc;
+  }
+
+  &__list {
+    border: 2px solid white;
+    position: fixed;
+    display: none;
+    width: min(30%, v.$rem-102);
+    height:auto;
+    background-color: #111111;
+    padding: v.$rem-10;
+    z-index: 1000;
+    list-style: none;
+  }
+
+  &__link .link {
+    display: block;
+    font-family: v.$ff-nav;
+    cursor: pointer;
+    @include m.transition;
+    @include m.hover;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: clamp(v.$rem-16, 3vw, v.$rem-22);
+    @include m.transition;
+    text-decoration: none;
+
+    &:hover { @include m.hover;}
+  }
+
+  &__drop:checked~.burger__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.5vmin, 28px)
+}
+}
+
+@media (max-width: v.$vp-small) {
+  .header__list {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: v.$rem-10;
+    cursor: pointer;
+    z-index: 1100;
+    @include m.transition;
+    @include m.hover;
+  }
+}
+

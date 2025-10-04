@@ -6,6 +6,7 @@
   border: 2px solid white;
   width: 100%;
   height: fit-content;
+  position: relative;
 
   &__nav {
     display: flex;
@@ -42,30 +43,5 @@
     cursor: pointer;
     @include m.transition;
     @include m.hover;
-  }
-
-  &__burger {
-    display: none;
-
-    &-line {
-      width: v.$rem-48;
-      height: v.$rem-4;
-      background-color: v.$fc;
-    }
-  }
-
-  @media (max-width: v.$vp-small) {
-    &__list {
-      display: none;
-    }
-
-    &__burger {
-      display: flex;
-      flex-direction: column;
-      gap: v.$rem-10;
-      cursor: pointer;
-      @include m.transition;
-      @include m.hover;
-    }
   }
 }

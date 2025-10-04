@@ -25,16 +25,26 @@
                 <div class="header__logo">
                     <a class="header__logo-txt">Head.</a>
                 </div>
-                <div class="header__burger">
-                    <div class="header__burger-line"></div>
-                    <div class="header__burger-line"></div>
-                    <div class="header__burger-line"></div>
-                </div>
                 <ul class="header__list">
                     <li class="header__link"><a>Works</a></li>
                     <li class="header__link"><a>Services</a></li>
                     <li class="header__link"><a>Contacts</a></li>
                 </ul>
+                <!-- Burger menu -->
+                <div class="burger">
+                    <!-- Checkbox -->
+                    <input type="checkbox" id="burger-toggle" class="burger__toggle"/>
+                     <label for="burger-toggle" aria-label="Open menu" class="burger__drop">
+                            <span class="burger__line"></span>
+                            <span class="burger__line"></span>
+                            <span class="burger__line"></span>
+                     </label>
+                    <ul class="burger__list">
+                        <li class="burger__link"><a>Works</a></li>
+                        <li class="burger__link"><a>Services</a></li>
+                        <li class="burger__link"><a>Contacts</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
@@ -45,18 +55,19 @@
                 Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.<br>
                 Donec viverra eleifend lacus, vitae ullamcor.
             </p>
-            <picture class="main__img">
-              <div class="mtn3">
-                <source media="(max-width: 320px)" srcset="images/mountain3.svg">
-              </div>
-              <div class="mtn2">
-                <source class="mtn2" media="(max-width: 768px)" srcset="images/mountain2.svg">
-               </div>
-               <div class="mtn1">
-                 <source class="mtn1" media="(min-width: 769px)" srcset="images/mountain1.svg">
-                <img class="main__pic" src="images/mountain1.svg" alt="Black & white landscape picture of a summit">
-            </picture>
         </main>
+            <picture class="main__img">
+                <div class="mtn3">
+                    <source media="(max-width: 320px)" srcset="images/mountain3.svg">
+                </div>
+                <div class="mtn2">
+                    <source class="mtn2" media="(max-width: 768px)" srcset="images/mountain2.svg">
+                </div>
+                <div class="mtn1">
+                    <source class="mtn1" media="(min-width: 769px)" srcset="images/mountain1.svg">
+                </div>
+                    <img class="main__pic" src="images/mountain1.svg" alt="Black & white landscape picture of a summit">               
+            </picture>
     </div>
 </body>
 </html>
