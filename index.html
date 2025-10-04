@@ -46,9 +46,14 @@
                 Donec viverra eleifend lacus, vitae ullamcor.
             </p>
             <picture class="main__img">
-                <source class="mtn3" media="(max-width: 320px)" srcset="images/mountain3.svg">
+              <div class="mtn3">
+                <source media="(max-width: 320px)" srcset="images/mountain3.svg">
+              </div>
+              <div class="mtn2">
                 <source class="mtn2" media="(max-width: 768px)" srcset="images/mountain2.svg">
-                <source class="mtn1" media="(min-width: 769px)" srcset="images/mountain1.svg">
+               </div>
+               <div class="mtn1">
+                 <source class="mtn1" media="(min-width: 769px)" srcset="images/mountain1.svg">
                 <img class="main__pic" src="images/mountain1.svg" alt="Black & white landscape picture of a summit">
             </picture>
         </main>
