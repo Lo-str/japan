@@ -15,10 +15,20 @@ transition: transform .2s;
 // === Images ===
 
 @mixin img1 {
-  max-width: v.$pw-img1;
+max-width: v.$pw-img1;
   width: 100%;
   height: auto;
 }
-@mixin img2 { max-width: v.$pw-img2; width: 100%; height: auto; }
-@mixin img3 { max-width: v.$pw-img3; width: 100%; height: auto; }
+
+@mixin img2 { 
+max-width: v.$pw-img2; 
+width: 100%; 
+height: auto; 
+}
+
+@mixin img3 { 
+max-width: v.$pw-img3; 
+width: 100%; 
+height: auto; 
+}
 
