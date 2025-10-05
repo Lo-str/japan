@@ -3,7 +3,6 @@
 
 // Header Block
 .header {  
-  border: 2px solid white;
   width: 100%;
   height: fit-content;
   position: relative;
@@ -16,7 +15,6 @@
   }
 
   &__logo {
-    border: 2px solid white;
     width: v.$rem-64;
     height: v.$rem-32;
     cursor: pointer;
@@ -31,7 +29,6 @@
   }
 
   &__list {
-    border: 2px solid white;
     display: flex;
     list-style: none;
     text-decoration: none;

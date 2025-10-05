@@ -12,13 +12,16 @@
   gap: clamp(v.$rem-24, calc(5vw + v.$rem-1), v.$rem-48);
 
   &__title {
+    position: relative;
     font-family: v.$ff-title;
     font-size: clamp(v.$rem-20 + v.$rem-16, calc(6vw + v.$rem-16), v.$rem-64 + v.$rem-20);
     letter-spacing: clamp(v.$rem_08, calc(6vw + v.$rem-16), v.$rem_2);
     line-height: clamp(v.$rem-30 + v.$rem-10, calc(6vw + v.$rem-16), v.$rem-102 );
-    font-weight: v.$fw-title;  }
+    font-weight: v.$fw-title;  
+  }
 
   &__txt {
+    position: relative;
     font-family: v.$ff-txt;
     font-size: clamp(v.$rem-10 + v.$rem-2, calc(2vw + v.$rem-16), v.$rem-20 + v.$rem-2);
     line-height: clamp(v.$rem-32, calc(2vw + v.$rem-16), v.$rem-10 + v.$rem-8);
@@ -27,16 +30,6 @@
   }
 
   &__pic {
-    width: 100%;
-    &__mtn1 {
-      @include m.img1; 
-    }
-    &__mtn2 {
-      @include m.img2; 
-    }
-    &__mtn3 {
-      @include m.img3; 
-    }
+    @include m.img1; 
   }
 }
-

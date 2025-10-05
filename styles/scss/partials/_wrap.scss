@@ -2,7 +2,6 @@
 @use "./vars" as v;
 
 .wrap{
-  border: 2px solid white;
   width: min(90%, v.$vp-wide);
   height: 100dvh;
   height: 100vh;
