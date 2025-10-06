@@ -44,11 +44,14 @@
 /* Tablet */
 @media screen and (max-width: v.$vp-mid) and (orientation: portrait) {
 
-  .main { margin-top: v.$rem-22; }
+  .main { margin-top: v.$rem-48; }
 
   .main__pic { @include m.img2; }
 
-  .main__title { font-size: v.$rem-72; }
+  .main__title {
+    font-size: v.$rem-72;
+    margin: 0;
+  }
 
   .main__txt { font-size: v.$rem-22; }
 }
@@ -60,7 +63,10 @@
 
   .main__pic { @include m.img3; }
 
-  .main__title { font-size: v.$rem-36; }
+  .main__title {
+    font-size: v.$rem-36;
+    margin: 0;
+  }
 
   .main__txt { font-size: v.$rem-12; }
 }
