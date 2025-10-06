@@ -2,34 +2,65 @@
 @use "./vars" as v;
 
 .main {
-  border: 2px solid white;
-  width: 100%;
-  height: auto;
+  width: v.$pct;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(v.$rem-24, calc(5vw + v.$rem-1), v.$rem-48);
+  gap: v.$rem-28;
+  text-align: center;
+  padding-bottom: v.$rem-28;
+  margin-top: v.$rem-145;
 
   &__title {
-    position: relative;
     font-family: v.$ff-title;
-    font-size: clamp(v.$rem-20 + v.$rem-16, calc(6vw + v.$rem-16), v.$rem-64 + v.$rem-20);
+    font-weight: v.$fw-title;
+    font-size: clamp(v.$rem-36, calc(6vw + v.$rem-16), v.$rem-84);
+    line-height: clamp(v.$rem-40, calc(6vw + v.$rem-16), v.$rem-102);
     letter-spacing: clamp(v.$rem_08, calc(6vw + v.$rem-16), v.$rem_2);
-    line-height: clamp(v.$rem-30 + v.$rem-10, calc(6vw + v.$rem-16), v.$rem-102 );
-    font-weight: v.$fw-title;  
-  }
-
-  &__txt {
-    position: relative;
-    font-family: v.$ff-txt;
-    font-size: clamp(v.$rem-10 + v.$rem-2, calc(2vw + v.$rem-16), v.$rem-20 + v.$rem-2);
-    line-height: clamp(v.$rem-32, calc(2vw + v.$rem-16), v.$rem-10 + v.$rem-8);
-    // width: clamp(45ch, 50%, 75ch);
+    margin: 0;
     text-align: center;
   }
 
-  &__pic {
-    @include m.img1; 
+  &__txt {
+    font-family: v.$ff-txt;
+    font-size: clamp(v.$rem-12, calc(2vw + v.$rem-16), v.$rem-22);
+    line-height: clamp(v.$rem-18, calc(2vw + v.$rem-16), v.$rem-32);
+    margin: 0;
+    padding: 0;
+    text-align: center;
   }
+
+  &__img,
+  &__pic {
+    display: block;
+    max-width: v.$pct;
+    height: auto;
+  }
+
+  /* Desktop */
+  &__pic { @include m.img1; }
+}
+
+/* Tablet */
+@media screen and (max-width: v.$vp-mid) and (orientation: portrait) {
+
+  .main { margin-top: v.$rem-22; }
+
+  .main__pic { @include m.img2; }
+
+  .main__title { font-size: v.$rem-72; }
+
+  .main__txt { font-size: v.$rem-22; }
+}
+
+/* Phone */
+@media screen and (max-width: v.$vp-small) and (orientation: portrait) {
+
+  .main { margin-top: v.$rem-64; }
+
+  .main__pic { @include m.img3; }
+
+  .main__title { font-size: v.$rem-36; }
+
+  .main__txt { font-size: v.$rem-12; }
 }

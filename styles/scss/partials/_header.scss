@@ -1,17 +1,17 @@
 @use "./mixins" as m;
 @use "./vars" as v;
 
-// Header Block
-.header {  
-  width: 100%;
-  height: fit-content;
+// Header Container
+.header {
+  width: v.$pct;
   position: relative;
 
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: min(v.$rem-5, 8%);
+    padding: min(v.$rem-5, v.$pct-8) 0;
+    position: relative;
   }
 
   &__logo {
@@ -40,5 +40,21 @@
     cursor: pointer;
     @include m.transition;
     @include m.hover;
+  }
+}
+
+@media screen and (max-width: v.$vp-small) and (orientation: portrait) {
+  .header__list {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: v.$vp-small) {
+  .burger {
+    display: none;
   }
 }

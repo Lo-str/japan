@@ -1,18 +1,43 @@
-@use "./mixins" as m;
 @use "./vars" as v;
 
-.wrap{
-  width: min(90%, v.$vp-wide);
-  height: 100dvh;
-  height: 100vh;
+/* Desktop */
+.wrap {
+  width: min(v.$pct-90, v.$pw-img1);
   margin: 0 auto;
-  padding: v.$rem-2;
-  padding-bottom: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
 }
 
-.header { grid-area: header;}
-.main { grid-area: main;}
+/* Tablet */
+@media screen and (max-width: v.$vp-mid) and (orientation: portrait) {
+  .wrap {
+    width: min(v.$pct-90, v.$pw-img2);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    gap: v.$rem-20;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: v.$vp-small) and (orientation: portrait) {
+  .wrap {
+    width: min(v.$pct, v.$pw-img3);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    gap: v.$rem-40;
+  }
+}

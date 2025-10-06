@@ -1,14 +1,13 @@
-@charset "UTF-8";
 .header {
   width: 100%;
-  height: fit-content;
   position: relative;
 }
 .header__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: min(0.5rem, 8%);
+  padding: min(0.5rem, 8%) 0;
+  position: relative;
 }
 .header__logo {
   width: 6.4rem;
@@ -39,6 +38,19 @@
   transform: scale(1.1);
 }
 
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+  .header__list {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .burger {
+    display: none;
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -55,51 +67,80 @@ body {
   padding-bottom: 0;
 }
 
+/* Desktop */
 .wrap {
-  width: min(90%, 90rem);
-  height: 100dvh;
-  height: 100vh;
+  width: min(90%, 86.4rem);
   margin: 0 auto;
-  padding: 0.2rem;
-  padding-bottom: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.header {
-  grid-area: header;
+/* Tablet */
+@media screen and (max-width: 76.8rem) and (orientation: portrait) {
+  .wrap {
+    width: min(90%, 61.7rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    gap: 2rem;
+  }
 }
-
-.main {
-  grid-area: main;
+/* Phone */
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+  .wrap {
+    width: min(100%, 25.6rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    gap: 4rem;
+  }
 }
-
 .main {
-  border: 2px solid white;
   width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(2.4rem, 5vw + 0.1rem, 4.8rem);
+  gap: 2.8rem;
+  text-align: center;
+  padding-bottom: 2.8rem;
+  margin-top: 14.5rem;
 }
 .main__title {
-  position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(3.6rem, 6vw + 1.6rem, 8.4rem);
-  letter-spacing: clamp(0.08rem, 6vw + 1.6rem, 0.2rem);
-  line-height: clamp(4rem, 6vw + 1.6rem, 10.2rem);
   font-weight: 500;
+  font-size: clamp(3.6rem, 6vw + 1.6rem, 8.4rem);
+  line-height: clamp(4rem, 6vw + 1.6rem, 10.2rem);
+  letter-spacing: clamp(0.08rem, 6vw + 1.6rem, -0.2rem);
+  margin: 0;
+  text-align: center;
 }
 .main__txt {
-  position: relative;
   font-family: "Source Sans 3", sans-serif;
   font-size: clamp(1.2rem, 2vw + 1.6rem, 2.2rem);
-  line-height: clamp(3.2rem, 2vw + 1.6rem, 1.8rem);
+  line-height: clamp(1.8rem, 2vw + 1.6rem, 3.2rem);
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+.main__img, .main__pic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.main {
+  /* Desktop */
 }
 .main__pic {
   max-width: 86.4rem;
@@ -107,88 +148,110 @@ body {
   height: auto;
 }
 
-.burger {
-  position: relative;
+/* Tablet */
+@media screen and (max-width: 76.8rem) and (orientation: portrait) {
+  .main {
+    margin-top: 2.2rem;
+  }
+  .main__pic {
+    max-width: 61.7rem;
+    width: 100%;
+    height: auto;
+  }
+  .main__title {
+    font-size: 7.2rem;
+  }
+  .main__txt {
+    font-size: 2.2rem;
+  }
 }
-.burger__toggle {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-  appearance: none;
-}
-.burger__drop {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  cursor: pointer;
-  /* optional: width: v.$rem-48; */
-}
-.burger__line {
-  width: 4.8rem;
-  height: 0.4rem;
-  background-color: #FFFFFF;
-  transition: transform 0.2s;
-}
-.burger {
-  /* CLOSED BY DEFAULT (do NOT re-set display later in this block) */
-}
-.burger__list {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0; /* ensure full-width overlay anchors to left too */
-  right: 100;
-  width: 100%;
-  height: auto; /* or 100vh if you want full screen */
-  background-color: #000000;
-  padding: 2rem 0;
-  z-index: 1000;
-  list-style: none;
-  /* layout when open (applied via the checked selector below) */
-  gap: 2rem;
-}
-.burger__link a {
-  display: block;
-  font-family: "Source Sans 3", sans-serif;
-  color: #FFFFFF;
-  text-align: center;
-  text-decoration: none;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  transition: transform 0.2s;
-  cursor: pointer;
-}
-.burger__link a:hover:hover {
-  transform: scale(1.1);
+/* Phone */
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+  .main {
+    margin-top: 6.4rem;
+  }
+  .main__pic {
+    max-width: 25.6rem;
+    width: 100%;
+    height: auto;
+  }
+  .main__title {
+    font-size: 3.6rem;
+  }
+  .main__txt {
+    font-size: 1.2rem;
+  }
 }
 .burger {
-  /* OPEN STATE: only here we switch to flex (so it’s hidden otherwise) */
-}
-.burger__toggle:checked ~ .burger__list {
-  display: flex;
+  position: static;
 }
 
-/* Small screens: show burger, hide desktop list */
-@media (max-width: 55rem) {
+/* Button */
+.burger__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 3.2rem;
+  transition: transform 0.2s;
+}
+.burger__btn:hover {
+  transform: scale(1.1);
+}
+.burger__btn i {
+  pointer-events: none;
+}
+
+.burger__link {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #000000;
+  width: 100%;
+  z-index: 1000;
+  list-style: none;
+}
+.burger__link a {
+  color: #FFFFFF;
+  font-family: "Source Sans 3", sans-serif;
+  text-decoration: none;
+}
+
+.burger__nav {
+  width: 100%;
+}
+
+.burger__nav.responsive .burger__link {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+@media (min-width: 40rem) {
+  .burger {
+    display: none;
+  }
+}
+@media (max-width: 40rem) {
   .header__list {
     display: none;
   }
   .burger {
-    gap: 1rem;
-    cursor: pointer;
-    z-index: 1100;
-    /* REMOVE hover scaling from the entire container to prevent shifting */
-    /* @include m.transition;  keep if you like, harmless */
-    /* no @include m.hover here */
-  }
-}
-/* Larger screens: hide burger */
-@media (min-width: 55rem) {
-  .burger {
-    display: none;
+    display: flex;
   }
 }
 
