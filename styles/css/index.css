@@ -1,3 +1,35 @@
+/* Baloo 2 - 500 */
+@font-face {
+  font-family: "Baloo 2";
+  src: url("../fonts/Baloo2-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Baloo 2 - 800 */
+@font-face {
+  font-family: "Baloo 2";
+  src: url("../fonts/Baloo2-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+/* Poppins - 400 */
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Source Sans 3 - 400 */
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -346,6 +378,19 @@ template {
 .header__link:hover {
   transform: scale(1.1);
 }
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+  .header .header__list {
+    display: none;
+  }
+  .header .burger {
+    display: flex;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .header .burger {
+    display: none;
+  }
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -478,6 +523,78 @@ body {
   }
   .main__txt {
     font-size: 1.2rem;
+  }
+}
+.burger {
+  position: static;
+}
+
+/* Button */
+.burger__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 3.2rem;
+  transition: transform 0.2s;
+}
+.burger__btn:hover {
+  transform: scale(1.1);
+}
+.burger__btn i {
+  pointer-events: none;
+}
+
+.burger__link {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #000000;
+  width: 100%;
+  z-index: 1000;
+  list-style: none;
+}
+.burger__link a {
+  color: #FFFFFF;
+  font-family: "Source Sans 3", sans-serif;
+  text-decoration: none;
+}
+
+.burger__nav {
+  width: 100%;
+}
+
+.burger__nav.responsive .burger__link {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+@media (min-width: 40rem) {
+  .burger {
+    display: none;
+  }
+}
+@media (max-width: 40rem) {
+  .header__list {
+    display: none;
+  }
+  .burger {
+    display: flex;
   }
 }
 .header {

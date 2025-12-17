@@ -1,3 +1,4 @@
+@use "./partials/fonts";
 @use "../../node_modules/normalize.css/normalize.css";
 @use "./partials/mixins" as m;
 @use "./partials/vars" as v;
@@ -5,6 +6,7 @@
 @use "./partials/body";
 @use "./partials/wrap";
 @use "./partials/main";
+@use "./partials/burger";
 
 .header {
     width: 100%;

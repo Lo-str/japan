@@ -41,4 +41,19 @@
     @include m.transition;
     @include m.hover;
   }
-}
+    @media screen and (max-width: v.$vp-small) and (orientation: portrait) {
+      .header__list {
+        display: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
+
+    @media screen and (min-width: v.$vp-small) {
+      .burger {
+        display: none;
+      }
+    }
+  }

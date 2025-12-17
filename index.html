@@ -33,6 +33,32 @@
                     <li class="header__link"><a>Services</a></li>
                     <li class="header__link"><a>Contacts</a></li>
                 </ul>
+                <!-- Burger menu -->
+                <div class="burger">
+                    <div class="burger__nav" id="burger">
+                        <button class="burger__btn" type="button" onclick="burgerNav()" aria-label="Toggle menu" aria-expanded="false"
+                            aria-controls="burgerMenu">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="burger__link" id="burgerMenu">
+                            <a href="#Works" class="burger__active">Works</a>
+                            <a href="#Services">Services</a>
+                            <a href="#Contacts">Contacts</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat GPT script -->
+                <script defer>
+                    function burgerNav() {
+                        const nav = document.getElementById("burger");
+                        const opened = nav.className === "burger__nav";
+                        nav.className = opened ? "burger__nav responsive" : "burger__nav"; q
+                        const btn = nav.querySelector(".burger__btn");
+                        if (btn) btn.setAttribute("aria-expanded", opened ? "true" : "false");
+                    }
+                </script>
             </nav>
         </header>
 
