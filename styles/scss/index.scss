@@ -1,3 +1,4 @@
+@use "../../node_modules/normalize.css/normalize.css";
 @use "./partials/mixins" as m;
 @use "./partials/vars" as v;
 @use "./partials/header";
@@ -5,3 +6,297 @@
 @use "./partials/wrap";
 @use "./partials/main";
 @use "./partials/burger-menu";
+
+.header {
+    width: 100%;
+    position: relative;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: min(0.5rem, 8%) 0;
+    position: relative;
+}
+
+.header__logo {
+    width: 6.4rem;
+    height: 3.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.header__logo:hover {
+    transform: scale(1.1);
+}
+
+.header__logo-txt {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 3rem;
+}
+
+.header__link {
+    font-family: "Source Sans 3", sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.header__link:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+    .header__list {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 40rem) {
+    .burger {
+        display: none;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: min(90%, 2rem);
+    padding-bottom: 0;
+}
+
+/* Desktop */
+.wrap {
+    width: min(90%, 86.4rem);
+    margin: 0 auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tablet */
+@media screen and (max-width: 76.8rem) and (orientation: portrait) {
+    .wrap {
+        width: min(90%, 61.7rem);
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 0;
+        gap: 10.2rem;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+    .wrap {
+        width: min(100%, 25.6rem);
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        gap: 1rem;
+    }
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+    text-align: center;
+    padding-bottom: 2.8rem;
+    margin-top: 14.5rem;
+}
+
+.main__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: clamp(3.6rem, 6vw + 1.6rem, 8.4rem);
+    line-height: clamp(4rem, 6vw + 1.6rem, 10.2rem);
+    letter-spacing: clamp(0.08rem, 6vw + 1.6rem, -0.2rem);
+    margin: 0;
+    text-align: center;
+}
+
+.main__txt {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: clamp(1.2rem, 2vw + 1.6rem, 2.2rem);
+    line-height: clamp(1.8rem, 2vw + 1.6rem, 3.2rem);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main__img,
+.main__pic {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.main {
+    /* Desktop */
+}
+
+.main__pic {
+    max-width: 86.4rem;
+    width: 100%;
+    height: auto;
+}
+
+/* Tablet */
+@media screen and (max-width: 76.8rem) and (orientation: portrait) {
+    .main {
+        margin-top: 4.8rem;
+    }
+
+    .main__pic {
+        max-width: 61.7rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .main__title {
+        font-size: 7.2rem;
+        margin: 0;
+    }
+
+    .main__txt {
+        font-size: 2.2rem;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 40rem) and (orientation: portrait) {
+    .main {
+        margin-top: 6.4rem;
+    }
+
+    .main__pic {
+        max-width: 25.6rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .main__title {
+        font-size: 3.6rem;
+        margin: 0;
+    }
+
+    .main__txt {
+        font-size: 1.2rem;
+    }
+}
+
+.burger {
+    position: static;
+}
+
+/* Button */
+.burger__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 3.2rem;
+    transition: transform 0.2s;
+}
+
+.burger__btn:hover {
+    transform: scale(1.1);
+}
+
+.burger__btn i {
+    pointer-events: none;
+}
+
+.burger__link {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #000000;
+    width: 100%;
+    z-index: 1000;
+    list-style: none;
+}
+
+.burger__link a {
+    color: #FFFFFF;
+    font-family: "Source Sans 3", sans-serif;
+    text-decoration: none;
+}
+
+.burger__nav {
+    width: 100%;
+}
+
+.burger__nav.responsive .burger__link {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+@media (min-width: 40rem) {
+    .burger {
+        display: none;
+    }
+}
+
+@media (max-width: 40rem) {
+    .header__list {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/*# sourceMappingURL=index.css.map */
