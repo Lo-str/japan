@@ -8,6 +8,24 @@
 @use "./partials/main";
 @use "./partials/burger";
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: min(90%, 2rem);
+    padding-bottom: 0;
+}
+
 .header {
     width: 100%;
     position: relative;
@@ -69,24 +87,6 @@
     .burger {
         display: none;
     }
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-    color: #FFFFFF;
-    background-color: #000000;
-    padding: min(90%, 2rem);
-    padding-bottom: 0;
 }
 
 /* Desktop */
@@ -241,9 +241,6 @@ body {
     transform: scale(1.1);
 }
 
-.burger__btn i {
-    pointer-events: none;
-}
 
 .burger__link {
     display: none;
@@ -295,5 +292,3 @@ body {
         display: flex;
     }
 }
-
-/*# sourceMappingURL=index.css.map */
