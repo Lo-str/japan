@@ -597,9 +597,27 @@ body {
     display: flex;
   }
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  background-color: #000000;
+  padding: 0;
+}
+
 .header {
   width: 100%;
   position: relative;
+  padding: min(90%, 2rem);
 }
 
 .header__nav {
@@ -657,28 +675,11 @@ body {
     display: none;
   }
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  color: #FFFFFF;
-  background-color: #000000;
-  padding: min(90%, 2rem);
-  padding-bottom: 0;
-}
-
 /* Desktop */
 .wrap {
   width: min(90%, 86.4rem);
-  margin: 0 auto;
+  min-width: 360px;
+  padding: 0;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -691,6 +692,8 @@ body {
 @media screen and (max-width: 76.8rem) and (orientation: portrait) {
   .wrap {
     width: min(90%, 61.7rem);
+    min-width: 360px;
+    padding: 0;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -705,6 +708,8 @@ body {
 @media screen and (max-width: 40rem) and (orientation: portrait) {
   .wrap {
     width: min(100%, 25.6rem);
+    min-width: 360px;
+    padding: 0;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -803,22 +808,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
   color: #FFFFFF;
   font-size: 3.2rem;
+  width: 40px;
+  height: 40px;
   transition: transform 0.2s;
 }
 
 .burger__btn:hover {
   transform: scale(1.1);
-}
-
-.burger__btn i {
-  pointer-events: none;
 }
 
 .burger__link {
@@ -832,10 +833,21 @@ body {
   list-style: none;
 }
 
+.burger__btn img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.burger__link a:hover {
+  transform: scale(1.1);
+}
+
 .burger__link a {
   color: #FFFFFF;
   font-family: "Source Sans 3", sans-serif;
   text-decoration: none;
+  transition: transform 0.2s;
 }
 
 .burger__nav {
@@ -869,6 +881,5 @@ body {
     display: flex;
   }
 }
-
 
 /*# sourceMappingURL=index.css.map */
